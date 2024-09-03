@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorial Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- First Section: Cover Picture -->
+    <section class="cover-picture">
+        <img src="cover-image.jpg" alt="Cover Image" class="cover-image">
+    </section>
+
+    <!-- Second Section: Picture and Details -->
+    <section class="details-section">
+        <div class="person-image">
+            <img src="person-image.jpg" alt="Person's Image" class="person-photo">
+        </div>
+        <div class="person-details">
+            <h1 contenteditable="true">Harry God</h1>
+            <div class="dates">
+                <div class="date">
+                    <label for="birth-date">Date of Birth:</label>
+                    <select id="birth-month">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <!-- Add other months here -->
+                    </select>
+                    <select id="birth-day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <!-- Add other days here -->
+                    </select>
+                    <select id="birth-year">
+                        <option value="1940">1940</option>
+                        <option value="1941">1941</option>
+                        <!-- Add other years here -->
+                    </select>
+                </div>
+                <div class="date">
+                    <label for="death-date">Date of Death:</label>
+                    <select id="death-month">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <!-- Add other months here -->
+                    </select>
+                    <select id="death-day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <!-- Add other days here -->
+                    </select>
+                    <select id="death-year">
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <!-- Add other years here -->
+                    </select>
+                </div>
+            </div>
+            <div class="location">
+                <label for="birth-location">Place of Birth:</label>
+                <input type="text" id="birth-location" value="Last location" contenteditable="true">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="navbar">
+        <ul>
+            <li><a href="#">Obituary</a></li>
+            <li><a href="#">Timeline</a></li>
+            <li><a href="#">Favorites</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Memory Wall</a></li>
+            <li><a href="#">Forum</a></li>
+        </ul>
+    </section>
+
+    <section class="quote-section">
+        <div class="quote-header">
+            <h2 class="quote-title">Key Quote</h2>
+            <div class="toggle-container">
+                <label for="quote-toggle" class="switch">
+                    <input type="checkbox" id="quote-toggle" onclick="toggleQuoteSection()" checked>
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">Quote</span>
+            </div>
+        </div>
+        <div id="quote-text-box" class="quote-wrapper">
+            <blockquote contenteditable="true" class="quote-text">
+                "Please add a memorable moment or something that is really, really nice about the person."
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="obituary-section">
+        <div class="obituary-header">
+            <h2 class="obituary-title">Obituary</h2>
+            <div class="toggle-container">
+                <label for="obituary-toggle" class="switch">
+                    <input type="checkbox" id="obituary-toggle" onclick="toggleObituarySection()" checked>
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">Obituary</span>
+            </div>
+        </div>
+        <div id="obituary-text-box" class="obituary-wrapper">
+            <blockquote contenteditable="true" class="obituary-text">
+                "Please add the obituary text or something that honors the person's life."
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline-header">
+            <h2 class="timeline-title">Timeline</h2>
+            <div class="toggle-container">
+                <label for="timeline-toggle" class="switch">
+                    <input type="checkbox" id="timeline-toggle" onclick="toggleTimelineSection()" checked>
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">Timeline</span>
+            </div>
+        </div>
+        <div id="timeline-content" class="timeline-content">
+            <!-- Button to Add a Timeline Event -->
+            <button id="add-timeline-event-btn" class="add-timeline-event-btn" onclick="addTimelineEvent()">Add a timeline event →</button>
+            <p id="warning-message" class="warning-message" style="display: none;">Maximum of 20 timeline events reached.</p>
+        </div>
+    </section>
+
+    <section class="favourites-section">
+        <div class="favourites-header">
+            <h2 class="favourites-title">Favourites</h2>
+            <div class="favourites-toggle-container">
+                <label class="switch">
+                    <input type="checkbox" id="favourites-toggle" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">FAVOURITES</span>
+            </div>
+        </div>
+        <div id="favourites-content" class="favourites-content">
+            <!-- Favourite items will be dynamically added here -->
+            <button class="add-favourite-btn">Add a Favourite →</button>
+        </div>
+    </section>
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

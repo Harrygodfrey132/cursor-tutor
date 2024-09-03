@@ -1,0 +1,674 @@
+body {
+    font-family: 'Arial', sans-serif, 'Georgia';
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.cover-picture {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details-section {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: -50px; /* Overlap with cover image */
+}
+
+.person-image {
+    flex: 1;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.person-photo {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+}
+
+.person-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.person-details h1 {
+    margin: 10px 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.dates {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.date {
+    margin-bottom: 10px;
+}
+
+.date label {
+    display: block;
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+select {
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+}
+
+.location {
+    margin-top: 20px;
+}
+
+.location label {
+    display: block;
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+
+/* Styling for Third Section  */
+
+.navbar {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px;
+    width: 80%;
+    margin: 20px auto; /* Center the navbar and add space around it */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar ul li a:hover {
+    color: #0056b3;
+}
+
+.navbar ul li a img {
+    margin-bottom: 5px; /* Space between icon and text */
+}
+
+
+/* Styling for Fourth Section  */
+.quote-section {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quote-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.quote-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007BFF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.toggle-label {
+    font-size: 1em;
+    color: #666;
+}
+
+.quote-wrapper {
+    border: 2px dashed #aaa;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+    overflow: hidden;
+    max-height: 200px; /* Default max height to show text */
+    opacity: 1;
+}
+
+.quote-wrapper.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.quote-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+.obituary-section {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.obituary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.obituary-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007BFF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.toggle-label {
+    font-size: 1em;
+    color: #666;
+}
+
+.obituary-wrapper {
+    border: 2px dashed #aaa;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+    overflow: hidden;
+    max-height: 200px; /* Default max height to show text */
+    opacity: 1;
+}
+
+.obituary-wrapper.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.obituary-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+/* Styling for Sixth section */
+.timeline-section {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.timeline-title {
+    font-family: 'Georgia', serif;
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+    border-bottom: 2px solid #5BC0EB;
+    padding-bottom: 5px;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007BFF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.toggle-label {
+    font-size: 1em;
+    color: #666;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    text-align: left;
+}
+
+.add-timeline-event-btn {
+    background-color: #669999;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 20px;
+}
+
+.add-timeline-event-btn:hover {
+    background-color: #557a7a;
+}
+
+.timeline-event-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    position: relative;
+    height: auto; /* Allow the form to expand with content */
+}
+
+.timeline-date-section {
+    width: 20%;
+    padding-right: 10px;
+}
+
+.timeline-date-section label {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.timeline-date-section select {
+    width: 100%;
+    padding: 5px;
+    font-size: 0.9em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: #333;
+}
+
+.timeline-details-section {
+    width: 75%;
+}
+
+.timeline-details-section label {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.timeline-details-section input[type="text"],
+.timeline-details-section textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: #333;
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 60px; /* Set a minimum height */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+    color: #555;
+}
+
+.warning-message {
+    color: red;
+    font-size: 1em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Styling for Seventh section */
+/* Favourites Section */
+.favourites-section {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.favourites-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.favourites-title {
+    font-family: 'Georgia', serif;
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+    border-bottom: 2px solid #5BC0EB;
+    padding-bottom: 5px;
+}
+
+.favourites-toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007BFF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.toggle-label {
+    font-size: 1em;
+    color: #666;
+}
+
+.favourites-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    text-align: left;
+}
+
+.add-favourite-btn {
+    background-color: #669999;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 20px;
+}
+
+.add-favourite-btn:hover {
+    background-color: #557a7a;
+}
